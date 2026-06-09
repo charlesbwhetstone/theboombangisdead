@@ -71,17 +71,6 @@
   }
   .eyebrow::after{content:"";flex:1;height:1px;background:rgba(179,39,30,.4)}
 
-  /* ---------- the DECEASED stamp (signature element) ---------- */
-  .stamp{
-    display:inline-block;font-family:var(--display);
-    color:var(--blood);border:3px solid var(--blood);
-    padding:.18em .5em .26em;letter-spacing:.12em;
-    transform:rotate(-7deg);opacity:.9;
-    box-shadow:inset 0 0 0 2px rgba(179,39,30,.45);
-    text-shadow:1px 1px 0 rgba(179,39,30,.25);
-    line-height:1;
-  }
-
   /* ---------- HERO ---------- */
   .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;
     justify-content:center;overflow:hidden;border-bottom:3px solid var(--blood)}
@@ -112,7 +101,6 @@
     font-family:var(--mono);font-size:.82rem;letter-spacing:.2em;
     text-transform:uppercase;color:var(--paper)}
   .hero__meta .dot{color:var(--blood)}
-  .hero .stamp{font-size:clamp(1.1rem,3.5vw,1.9rem);margin-top:.2rem}
   .scrolldown{position:absolute;left:50%;bottom:2rem;transform:translateX(-50%);
     z-index:2;font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;
     text-transform:uppercase;color:var(--paper-dim);text-align:center}
@@ -291,7 +279,6 @@
       <span>Proto-Punk</span><span class="dot">✦</span>
       <span>Noise</span>
     </div>
-    <p class="stamp">Deceased</p>
   </div>
   <div class="scrolldown" aria-hidden="true">Pay respects<span>↓</span></div>
 </header>
