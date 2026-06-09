@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Boom Bang — Garage Rock · Proto-Punk · Noise</title>
+<meta name="author" content="The Boom Bang">
+<meta name="description" content="The Boom Bang — a 4-piece garage rock band formerly from Oklahoma City. They came, wrote music, played shows, and conquered. This is what's left.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://theboombangisdead.com/">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Boom Bang">
+<meta property="og:title" content="The Boom Bang">
+<meta property="og:description" content="A 4-piece garage rock band formerly from Oklahoma City. They came, wrote music, played shows, and conquered. This is what's left.">
+<meta property="og:url" content="https://theboombangisdead.com/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@theboombang">
+<meta name="twitter:title" content="The Boom Bang">
+<meta name="twitter:description" content="Garage rock · proto-punk · noise. Deceased. This is what's left.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Spectral:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --ink-soft:#141312;
+    --paper:#e8e4d8;
+    --paper-dim:#9c978a;
+    --concrete:#5d5d5d;
+    --blood:#b3271e;
+    --blood-dim:#7e1c16;
+    --display:'Anton',Impact,sans-serif;
+    --body:'Spectral',Georgia,serif;
+    --mono:'Space Mono','Courier New',monospace;
+    --edge:1px solid rgba(232,228,216,.14);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    font-size:clamp(17px,1.1vw + 14px,20px);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  /* photocopier grain over everything */
+  .grain{
+    position:fixed;inset:0;z-index:60;pointer-events:none;
+    opacity:.06;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ---------- eyebrow / labels ---------- */
+  .eyebrow{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--blood);
+    display:flex;align-items:center;gap:.9em;margin-bottom:1.4rem;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:rgba(179,39,30,.4)}
+
+  /* ---------- the DECEASED stamp (signature element) ---------- */
+  .stamp{
+    display:inline-block;font-family:var(--display);
+    color:var(--blood);border:3px solid var(--blood);
+    padding:.18em .5em .26em;letter-spacing:.12em;
+    transform:rotate(-7deg);opacity:.9;
+    box-shadow:inset 0 0 0 2px rgba(179,39,30,.45);
+    text-shadow:1px 1px 0 rgba(179,39,30,.25);
+    line-height:1;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;
+    justify-content:center;overflow:hidden;border-bottom:3px solid var(--blood)}
+  .hero__video{position:absolute;inset:0;z-index:0;overflow:hidden;background:#000}
+  .hero__video iframe{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:max(177.78vh,100vw);height:max(56.25vw,100vh);
+    filter:grayscale(1) contrast(1.25) brightness(.5);
+    pointer-events:none;
+  }
+  .hero__video::after{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 50% 30%,transparent 0%,rgba(10,10,10,.55) 60%,rgba(10,10,10,.95) 100%),
+      repeating-linear-gradient(0deg,rgba(10,10,10,.35) 0 2px,transparent 2px 4px);
+  }
+  .hero__inner{position:relative;z-index:2}
+  .hero__kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--paper-dim);margin-bottom:1rem}
+  .hero h1{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(4.2rem,17vw,15rem);line-height:.82;
+    letter-spacing:.01em;text-transform:uppercase;
+    text-shadow:4px 4px 0 var(--blood-dim),0 2px 30px rgba(0,0,0,.8);
+    margin-bottom:1.5rem;
+  }
+  .hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;
+    font-family:var(--mono);font-size:.82rem;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--paper)}
+  .hero__meta .dot{color:var(--blood)}
+  .hero .stamp{font-size:clamp(1.1rem,3.5vw,1.9rem);margin-top:.2rem}
+  .scrolldown{position:absolute;left:50%;bottom:2rem;transform:translateX(-50%);
+    z-index:2;font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--paper-dim);text-align:center}
+  .scrolldown span{display:block;font-size:1.2rem;margin-top:.3rem;animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{border-top:var(--edge);border-bottom:3px solid var(--blood);
+    background:var(--blood);color:var(--ink);overflow:hidden;white-space:nowrap}
+  .marquee__track{display:inline-flex;gap:0;animation:slide 50s linear infinite;will-change:transform}
+  .marquee b{font-family:var(--display);font-size:1.7rem;letter-spacing:.06em;
+    text-transform:uppercase;padding:.55rem 0;line-height:1}
+  .marquee .sep{padding:0 1.1rem;opacity:.55}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- generic section ---------- */
+  section.band{padding:clamp(4rem,9vw,7.5rem) 0;border-bottom:var(--edge)}
+  h2{font-family:var(--display);font-weight:400;text-transform:uppercase;
+    font-size:clamp(2.4rem,7vw,5rem);line-height:.92;letter-spacing:.01em;margin-bottom:1.8rem}
+
+  /* OBITUARY */
+  .obit{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+  .obit__born{font-family:var(--mono);font-size:.85rem;line-height:2;
+    letter-spacing:.06em;color:var(--paper-dim);border-left:3px solid var(--blood);padding-left:1.4rem}
+  .obit__born strong{color:var(--paper);display:block;font-size:1rem;letter-spacing:.04em}
+  .obit p{font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.5;font-weight:400}
+  .obit p .drop{color:var(--blood);font-weight:600}
+  .obit .disco{font-size:1rem;line-height:1.8;color:var(--paper-dim);margin-top:1.6rem;
+    border-top:var(--edge);padding-top:1.4rem}
+  .obit .disco em{font-style:italic;color:var(--paper)}
+  .obit .disco__label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--blood);margin-bottom:.5rem}
+  .obit .credit{margin-top:1.6rem;font-family:var(--mono);font-size:.78rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim)}
+
+  /* LISTEN */
+  .listen h2 em{font-style:normal;color:var(--blood)}
+
+  /* VIDEO */
+  .vid__feature{margin-bottom:2rem}
+  .vid__embed{position:relative;width:100%;aspect-ratio:16/9;background:#000;border:var(--edge)}
+  .vid__embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.15)}
+  .vid__cap{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--paper-dim);margin-top:.7rem}
+  .vid__cap b{color:var(--paper);font-weight:700}
+  .vid__cap .blood{color:var(--blood)}
+  .vid__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem}
+
+  /* GALLERY */
+  .gallery__credit{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:2rem}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px}
+  .gallery .tile{position:relative;aspect-ratio:4/3;overflow:hidden;border:0;padding:0;margin:0;cursor:pointer;background:#000}
+  .gallery .tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.05);transition:transform .4s ease,filter .3s ease;display:block}
+  .gallery .tile:hover img,.gallery .tile:focus-visible img{transform:scale(1.06);filter:grayscale(0) contrast(1.1)}
+  .gallery .tile::after{content:"";position:absolute;inset:0;background:var(--blood);mix-blend-mode:multiply;opacity:0;transition:opacity .3s ease}
+  .gallery .tile:hover::after{opacity:.12}
+  .lb{position:fixed;inset:0;z-index:80;background:rgba(8,8,8,.95);display:none;align-items:center;justify-content:center}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:86vh;object-fit:contain;border:1px solid rgba(232,228,216,.15)}
+  .lb__btn{position:absolute;background:none;border:0;color:var(--paper);font-family:var(--display);cursor:pointer;padding:1rem;line-height:1;z-index:2}
+  .lb__close{top:1rem;right:1.2rem;font-size:1.8rem}
+  .lb__prev{left:.5rem;top:50%;transform:translateY(-50%);font-size:3rem}
+  .lb__next{right:.5rem;top:50%;transform:translateY(-50%);font-size:3rem}
+  .lb__btn:hover{color:var(--blood)}
+  .lb__count{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.8rem;letter-spacing:.2em;color:var(--paper-dim)}
+  .listen__sub{font-family:var(--mono);letter-spacing:.22em;text-transform:uppercase;
+    font-size:.9rem;color:var(--paper-dim);margin-bottom:2.4rem}
+  .player{border:var(--edge);background:#000;margin-bottom:2.2rem}
+  .player iframe{display:block;width:100%;border:0}
+  .streamrow{display:flex;flex-wrap:wrap;gap:1rem}
+  .btn{
+    font-family:var(--mono);font-weight:700;font-size:.82rem;letter-spacing:.16em;
+    text-transform:uppercase;text-decoration:none;
+    border:2px solid var(--paper);color:var(--paper);background:transparent;
+    padding:1rem 1.6rem;display:inline-flex;align-items:center;gap:.7rem;
+    transition:background .15s ease,color .15s ease,transform .1s ease;
+  }
+  .btn:hover,.btn:focus-visible{background:var(--blood);border-color:var(--blood);color:var(--paper);transform:translate(-2px,-2px)}
+  .btn .arrow{color:var(--blood)}
+  .btn:hover .arrow,.btn:focus-visible .arrow{color:var(--ink)}
+
+  /* TOUR + FAQ */
+  .events{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(232,228,216,.14);
+    border:var(--edge);margin-bottom:3.5rem}
+  .event{background:var(--ink);padding:2rem 1.8rem}
+  .event .when{font-family:var(--display);font-size:2.6rem;color:var(--blood);line-height:.9}
+  .event .what{font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--paper-dim);margin-top:.6rem}
+  .faq{border-top:var(--edge)}
+  .faq__lead{font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;color:var(--paper-dim);
+    margin-bottom:.6rem}
+  details{border-bottom:var(--edge);padding:1.3rem 0}
+  summary{font-family:var(--display);font-size:clamp(1.3rem,3.5vw,2rem);text-transform:uppercase;
+    letter-spacing:.01em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+    align-items:center;gap:1rem;line-height:1}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--blood);font-family:var(--mono);font-weight:700;transition:transform .2s ease}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:1rem;font-size:1.2rem;color:var(--paper)}
+
+  /* CONTACT */
+  .contact{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .contact__big{font-family:var(--body);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.8rem);
+    line-height:1.5;color:var(--paper)}
+  .mailbtn{margin-top:1.8rem}
+  .socials{display:flex;flex-direction:column;gap:0;border:var(--edge)}
+  .socials a{font-family:var(--mono);font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;
+    text-decoration:none;padding:1.1rem 1.4rem;border-bottom:var(--edge);display:flex;
+    justify-content:space-between;align-items:center;transition:background .12s ease,color .12s ease}
+  .socials a:last-child{border-bottom:0}
+  .socials a:hover,.socials a:focus-visible{background:var(--blood);color:var(--paper)}
+  .socials a .at{color:var(--paper-dim)}
+  .socials a:hover .at,.socials a:focus-visible .at{color:var(--paper)}
+
+  /* FOOTER */
+  footer{padding:3.5rem 0;text-align:center}
+  footer .rip{font-family:var(--display);font-size:clamp(2rem,6vw,3.5rem);text-transform:uppercase;
+    color:var(--concrete);line-height:1;margin-bottom:1.4rem}
+  footer .fine{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;color:var(--paper-dim)}
+  footer .pizza{color:var(--blood)}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:760px){
+    .obit,.contact{grid-template-columns:1fr}
+    .events{grid-template-columns:1fr}
+    .obit__born{order:2}
+  }
+
+  /* ---------- a11y ---------- */
+  :focus-visible{outline:2px solid var(--blood);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .marquee__track{animation:none}
+    .scrolldown span{animation:none}
+    .hero__video iframe{filter:grayscale(1) contrast(1.2) brightness(.45)}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "The Boom Bang",
+  "genre": ["Garage Rock", "Proto-Punk", "Noise Rock"],
+  "foundingDate": "2009",
+  "dissolutionDate": "2013",
+  "foundingLocation": {"@type": "Place", "name": "Oklahoma City, Oklahoma, USA"},
+  "url": "https://theboombangisdead.com/",
+  "email": "theboombang@gmail.com",
+  "sameAs": [
+    "https://theboombang.bandcamp.com",
+    "https://soundcloud.com/the-boom-bang",
+    "https://open.spotify.com/artist/33bL0MqydrhKcnGDwzbHFf",
+    "https://music.apple.com/us/artist/the-boom-bang/1568836692",
+    "https://www.facebook.com/theboombang",
+    "https://www.instagram.com/theboombang/",
+    "https://x.com/theboombang",
+    "https://www.youtube.com/user/theboombangband"
+  ]
+}
+</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero__video" aria-hidden="true">
+    <iframe src="https://player.vimeo.com/video/554427806?background=1&autoplay=1&loop=1&muted=1&autopause=0"
+            title="The Boom Bang background reel" allow="autoplay" tabindex="-1" frameborder="0"></iframe>
+  </div>
+  <div class="hero__inner wrap">
+    <p class="hero__kicker">Oklahoma City · Est. 2009</p>
+    <h1>The<br>Boom<br>Bang</h1>
+    <div class="hero__meta">
+      <span>Garage Rock</span><span class="dot">✦</span>
+      <span>Proto-Punk</span><span class="dot">✦</span>
+      <span>Noise</span>
+    </div>
+    <p class="stamp">Deceased</p>
+  </div>
+  <div class="scrolldown" aria-hidden="true">Pay respects<span>↓</span></div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <b>The Boom Bang<span class="sep">✦</span>Deceased<span class="sep">✦</span>Kick Out The Jams<span class="sep">✦</span>Pizzapocalypse<span class="sep">✦</span>World War Fun<span class="sep">✦</span>Bummer Camp<span class="sep">✦</span>Tokyo Roll<span class="sep">✦</span>We Skeletons<span class="sep">✦</span>Vietnomnomnom<span class="sep">✦</span>Rest In Distortion<span class="sep">✦</span>Garage Rock<span class="sep">✦</span>Proto-Punk<span class="sep">✦</span>Noise<span class="sep">✦</span>This Is What's Left<span class="sep">✦</span>Powered By Pizza<span class="sep">✦</span>Long Live The Dead<span class="sep">✦</span>R.I.P.<span class="sep">✦</span></b>
+    <b>The Boom Bang<span class="sep">✦</span>Deceased<span class="sep">✦</span>Kick Out The Jams<span class="sep">✦</span>Pizzapocalypse<span class="sep">✦</span>World War Fun<span class="sep">✦</span>Bummer Camp<span class="sep">✦</span>Tokyo Roll<span class="sep">✦</span>We Skeletons<span class="sep">✦</span>Vietnomnomnom<span class="sep">✦</span>Rest In Distortion<span class="sep">✦</span>Garage Rock<span class="sep">✦</span>Proto-Punk<span class="sep">✦</span>Noise<span class="sep">✦</span>This Is What's Left<span class="sep">✦</span>Powered By Pizza<span class="sep">✦</span>Long Live The Dead<span class="sep">✦</span>R.I.P.<span class="sep">✦</span></b>
+  </div>
+</div>
+
+<!-- ============ OBITUARY ============ -->
+<section class="band" id="about">
+  <div class="wrap">
+    <p class="eyebrow">In Memoriam</p>
+    <div class="obit">
+      <div class="obit__born">
+        <strong>Formed</strong>Oklahoma City · 2009
+        <strong style="margin-top:1.2rem">The Loud Years</strong>2009 — 2013
+        <strong style="margin-top:1.2rem">Final Show</strong>March 22, 2013
+        <strong style="margin-top:1.2rem">Personnel</strong>James Smith · Tommy McKenzie · Weston Lorance · Charles Whetstone
+        <strong style="margin-top:1.2rem">Recorded by</strong>Kevin Whetstone · Nice People
+        <strong style="margin-top:1.2rem">Came · Wrote · Conquered</strong>And then, the silence.
+      </div>
+      <div>
+        <p>The dudes in The Boom Bang were buddies who liked hanging out and goofing around. So they picked up some instruments and started a garage&nbsp;rock / proto-punk / noise band. <span class="drop">This is what's left.</span></p>
+        <p class="disco"><span class="disco__label">Left behind</span> <em>Pizzapocalypse</em> (2009) · <em>Bummer Camp</em> 7″ — 300 pressed (2010) · <em>World War Fun</em> (2011) · the split 7″ with The Copperheads (2011) · <em>Teenage Mutant Ninja Turtlez</em> (2012)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="band" id="video">
+  <div class="wrap">
+    <p class="eyebrow">Footage</p>
+    <h2>Caught On Tape</h2>
+    <div class="vid__feature">
+      <div class="vid__embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/wSkZLgRd9Ic" title="The Boom Bang — Final Show, March 22, 2013" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="vid__cap"><b>The Final Show</b> <span class="blood">·</span> March 22, 2013</p>
+    </div>
+    <div class="vid__grid">
+      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/Dyaz33QkR8o" title="The Boom Bang — Tokyo Roll" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Tokyo Roll</p></div>
+      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/-SrWlYmOHls" title="The Boom Bang — Vietnomnomnom" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Vietnomnomnom</p></div>
+      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/k9NwfGl8ues" title="The Boom Bang — Jabroni Ramoney" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Jabroni Ramoney</p></div>
+      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/vhh1ptWd39M" title="The Boom Bang — Tobacula" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Tobacula</p></div>
+      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/2q2RIK_yfhY" title="The Boom Bang — We Skeletons" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">We Skeletons</p></div>
+      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/wUGa8IyIZbc" title="The Boom Bang — Coast of Christmas Trash" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Coast of Christmas Trash</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ PHOTOS ============ -->
+<section class="band" id="photos">
+  <div class="wrap">
+    <p class="eyebrow">The Pit</p>
+    <h2>Caught Live</h2>
+    <p class="gallery__credit">Photographs — Doug Schwarz</p>
+    <div class="gallery">
+      <button class="tile" aria-label="View photo 1"><img src="photos/gig-01.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 2"><img src="photos/gig-02.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 3"><img src="photos/gig-03.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 4"><img src="photos/gig-04.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 5"><img src="photos/gig-05.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 6"><img src="photos/gig-06.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 7"><img src="photos/gig-07.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 8"><img src="photos/gig-08.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 9"><img src="photos/gig-09.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 10"><img src="photos/gig-10.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 11"><img src="photos/gig-11.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 12"><img src="photos/gig-12.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 13"><img src="photos/gig-13.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 14"><img src="photos/gig-14.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 15"><img src="photos/gig-15.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 16"><img src="photos/gig-16.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 17"><img src="photos/gig-17.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 18"><img src="photos/gig-18.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 19"><img src="photos/gig-19.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 20"><img src="photos/gig-20.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 21"><img src="photos/gig-21.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 22"><img src="photos/gig-22.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 23"><img src="photos/gig-23.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 24"><img src="photos/gig-24.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 25"><img src="photos/gig-25.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 26"><img src="photos/gig-26.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 27"><img src="photos/gig-27.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 28"><img src="photos/gig-28.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 29"><img src="photos/gig-29.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 30"><img src="photos/gig-30.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 31"><img src="photos/gig-31.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 32"><img src="photos/gig-32.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 33"><img src="photos/gig-33.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 34"><img src="photos/gig-34.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 35"><img src="photos/gig-35.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 36"><img src="photos/gig-36.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 37"><img src="photos/gig-37.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+      <button class="tile" aria-label="View photo 38"><img src="photos/gig-38.webp" loading="lazy" alt="The Boom Bang live — photo by Doug Schwarz"></button>
+    </div>
+  </div>
+</section>
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb__btn lb__close" aria-label="Close">&#10005;</button>
+  <button class="lb__btn lb__prev" aria-label="Previous photo">&#8249;</button>
+  <img id="lbImg" alt="The Boom Bang live, photographed by Doug Schwarz">
+  <button class="lb__btn lb__next" aria-label="Next photo">&#8250;</button>
+  <div class="lb__count" id="lbCount"></div>
+</div>
+
+<!-- ============ LISTEN ============ -->
+<section class="band listen" id="listen">
+  <div class="wrap">
+    <p class="eyebrow">Hit The Ground</p>
+    <h2>Kick Out<br>The <em>Jams</em></h2>
+    <p class="listen__sub">Stream the noise · while it lasts</p>
+    <div class="player">
+      <iframe title="The Boom Bang on Spotify" style="border-radius:0"
+        src="https://open.spotify.com/embed/artist/33bL0MqydrhKcnGDwzbHFf?utm_source=generator&theme=0"
+        width="100%" height="352" frameborder="0" allowfullscreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+    </div>
+    <div class="streamrow">
+      <a class="btn" href="https://theboombang.bandcamp.com" target="_blank" rel="noopener">Bandcamp <span class="arrow">→</span></a>
+      <a class="btn" href="https://open.spotify.com/artist/33bL0MqydrhKcnGDwzbHFf" target="_blank" rel="noopener">Spotify <span class="arrow">→</span></a>
+      <a class="btn" href="https://music.apple.com/us/artist/the-boom-bang/1568836692" target="_blank" rel="noopener">Apple Music <span class="arrow">→</span></a>
+      <a class="btn" href="https://soundcloud.com/the-boom-bang" target="_blank" rel="noopener">SoundCloud <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOUR + FAQ ============ -->
+<section class="band" id="tour">
+  <div class="wrap">
+    <p class="eyebrow">Events</p>
+    <h2>Tour Dates</h2>
+    <div class="events">
+      <div class="event"><div class="when">TBD</div><div class="what">Event Details</div></div>
+      <div class="event"><div class="when">TBD</div><div class="what">See below · $$$</div></div>
+    </div>
+
+    <div class="faq">
+      <p class="faq__lead">Can't find an answer? Reach us at theboombang@gmail.com</p>
+      <details>
+        <summary>Are you really dead?</summary>
+        <p>Maybe.</p>
+      </details>
+      <details>
+        <summary>What'll it take to resurrect you for a reunion show?</summary>
+        <p>A few pepperoni pizzas, $20k, and travel stipends.</p>
+      </details>
+      <details>
+        <summary>Can I buy your merch?</summary>
+        <p>We're working on it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="band" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Communicate With The Dead</p>
+    <div class="contact">
+      <div>
+        <p class="contact__big">Booking, resurrections, pizza deliveries, or just to say the noise still rings in your ears — send word.</p>
+        <a class="btn mailbtn" href="mailto:theboombang@gmail.com?subject=Communicating%20with%20the%20dead">Email the band <span class="arrow">→</span></a>
+      </div>
+      <nav class="socials" aria-label="Social links">
+        <a href="https://theboombang.bandcamp.com" target="_blank" rel="noopener">Bandcamp <span class="at">/theboombang</span></a>
+        <a href="https://soundcloud.com/the-boom-bang" target="_blank" rel="noopener">SoundCloud <span class="at">/the-boom-bang</span></a>
+        <a href="https://www.facebook.com/theboombang" target="_blank" rel="noopener">Facebook <span class="at">/theboombang</span></a>
+        <a href="https://www.instagram.com/theboombang/" target="_blank" rel="noopener">Instagram <span class="at">/theboombang</span></a>
+        <a href="https://x.com/theboombang" target="_blank" rel="noopener">X <span class="at">/theboombang</span></a>
+        <a href="https://www.youtube.com/user/theboombangband" target="_blank" rel="noopener">YouTube <span class="at">/theboombangband</span></a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <p class="rip">Rest In Pizza</p>
+    <p class="fine">© 2009–2026 The Boom Bang · All Rights Reserved · Powered by <span class="pizza">Pizza</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const srcs=[...document.querySelectorAll('.gallery .tile img')].map(i=>i.getAttribute('src'));
+  const lb=document.getElementById('lb'),img=document.getElementById('lbImg'),count=document.getElementById('lbCount');
+  let idx=0;
+  function show(i){idx=(i+srcs.length)%srcs.length;img.src=srcs[idx];count.textContent=(idx+1)+' / '+srcs.length;}
+  function open(i){show(i);lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');img.removeAttribute('src');}
+  document.querySelectorAll('.gallery .tile').forEach((b,i)=>b.addEventListener('click',()=>open(i)));
+  lb.querySelector('.lb__close').addEventListener('click',close);
+  lb.querySelector('.lb__prev').addEventListener('click',e=>{e.stopPropagation();show(idx-1);});
+  lb.querySelector('.lb__next').addEventListener('click',e=>{e.stopPropagation();show(idx+1);});
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(idx-1);else if(e.key==='ArrowRight')show(idx+1);});
+})();
+</script>
+</body>
+</html>
