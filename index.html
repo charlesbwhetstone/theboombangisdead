@@ -246,6 +246,24 @@
     .scrolldown span{animation:none}
     .hero__video iframe{filter:grayscale(1) contrast(1.2) brightness(.45)}
   }
+
+/* Click to load embeds. The placeholder is sized so swapping in the iframe
+   causes no layout shift, and the aspect-ratio keeps that true at any width. */
+.embed-load{position:relative;display:block;width:100%;padding:0;border:0;cursor:pointer;
+background:#111;aspect-ratio:16/9;overflow:hidden}
+.embed-load img{display:block;width:100%;height:100%;object-fit:cover}
+.embed-load__play{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+font:600 14px/1 var(--mono,monospace);letter-spacing:.14em;text-transform:uppercase;
+color:#fff;background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.75);
+padding:.65rem 1.1rem;pointer-events:none}
+.embed-load:hover .embed-load__play,.embed-load:focus-visible .embed-load__play{background:#000}
+.embed-load:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.embed-load--wide{aspect-ratio:auto;min-height:352px;display:flex;flex-direction:column;
+align-items:center;justify-content:center;gap:.5rem}
+.embed-load__sp{font:600 15px/1.2 var(--mono,monospace);letter-spacing:.1em;
+text-transform:uppercase;color:#fff}
+.embed-load__note{font-size:12px;color:#bbb}
+.embed-fallback{display:block;padding:.75rem 0;color:inherit}
 </style>
 <script type="application/ld+json">
 {
@@ -277,8 +295,8 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="hero__video" aria-hidden="true">
-    <iframe src="https://player.vimeo.com/video/554427806?background=1&autoplay=1&loop=1&muted=1&autopause=0"
-            title="The Boom Bang background reel" allow="autoplay" tabindex="-1" frameborder="0"></iframe>
+    <img src="photos/HERO-PLACEHOLDER.webp" width="1600" height="1064"
+         alt="" fetchpriority="high" decoding="async">
   </div>
   <div class="hero__inner wrap">
     <p class="hero__kicker">Oklahoma City · Est. 2009</p>
@@ -328,17 +346,17 @@
     <h2>Caught On Tape</h2>
     <div class="vid__feature">
       <div class="vid__embed">
-        <iframe src="https://www.youtube-nocookie.com/embed/wSkZLgRd9Ic" title="The Boom Bang — Final Show, March 22, 2013" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button type="button" class="embed-load" data-kind="yt" data-id="wSkZLgRd9Ic" aria-label="Play video: The Boom Bang — Final Show, March 22, 2013"><img src="posters/wSkZLgRd9Ic.webp" width="480" height="270" loading="lazy" decoding="async" alt=""><span class="embed-load__play" aria-hidden="true">Play</span></button><noscript><a class="embed-fallback" href="https://www.youtube-nocookie.com/watch?v=wSkZLgRd9Ic">Watch "The Boom Bang — Final Show, March 22, 2013" on YouTube</a></noscript>
       </div>
       <p class="vid__cap"><b>The Final Show</b> <span class="blood">·</span> March 22, 2013</p>
     </div>
     <div class="vid__grid">
-      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/Dyaz33QkR8o" title="The Boom Bang — Tokyo Roll" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Tokyo Roll</p></div>
-      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/-SrWlYmOHls" title="The Boom Bang — Vietnomnomnom" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Vietnomnomnom</p></div>
-      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/k9NwfGl8ues" title="The Boom Bang — Jabroni Ramoney" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Jabroni Ramoney</p></div>
-      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/vhh1ptWd39M" title="The Boom Bang — Tobacula" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Tobacula</p></div>
-      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/2q2RIK_yfhY" title="The Boom Bang — We Skeletons" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">We Skeletons</p></div>
-      <div><div class="vid__embed"><iframe src="https://www.youtube-nocookie.com/embed/wUGa8IyIZbc" title="The Boom Bang — Coast of Christmas Trash" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vid__cap">Coast of Christmas Trash</p></div>
+      <div><div class="vid__embed"><button type="button" class="embed-load" data-kind="yt" data-id="Dyaz33QkR8o" aria-label="Play video: The Boom Bang — Tokyo Roll"><img src="posters/Dyaz33QkR8o.webp" width="480" height="270" loading="lazy" decoding="async" alt=""><span class="embed-load__play" aria-hidden="true">Play</span></button><noscript><a class="embed-fallback" href="https://www.youtube-nocookie.com/watch?v=Dyaz33QkR8o">Watch "The Boom Bang — Tokyo Roll" on YouTube</a></noscript></div><p class="vid__cap">Tokyo Roll</p></div>
+      <div><div class="vid__embed"><button type="button" class="embed-load" data-kind="yt" data-id="-SrWlYmOHls" aria-label="Play video: The Boom Bang — Vietnomnomnom"><img src="posters/-SrWlYmOHls.webp" width="480" height="270" loading="lazy" decoding="async" alt=""><span class="embed-load__play" aria-hidden="true">Play</span></button><noscript><a class="embed-fallback" href="https://www.youtube-nocookie.com/watch?v=-SrWlYmOHls">Watch "The Boom Bang — Vietnomnomnom" on YouTube</a></noscript></div><p class="vid__cap">Vietnomnomnom</p></div>
+      <div><div class="vid__embed"><button type="button" class="embed-load" data-kind="yt" data-id="k9NwfGl8ues" aria-label="Play video: The Boom Bang — Jabroni Ramoney"><img src="posters/k9NwfGl8ues.webp" width="480" height="270" loading="lazy" decoding="async" alt=""><span class="embed-load__play" aria-hidden="true">Play</span></button><noscript><a class="embed-fallback" href="https://www.youtube-nocookie.com/watch?v=k9NwfGl8ues">Watch "The Boom Bang — Jabroni Ramoney" on YouTube</a></noscript></div><p class="vid__cap">Jabroni Ramoney</p></div>
+      <div><div class="vid__embed"><button type="button" class="embed-load" data-kind="yt" data-id="vhh1ptWd39M" aria-label="Play video: The Boom Bang — Tobacula"><img src="posters/vhh1ptWd39M.webp" width="480" height="270" loading="lazy" decoding="async" alt=""><span class="embed-load__play" aria-hidden="true">Play</span></button><noscript><a class="embed-fallback" href="https://www.youtube-nocookie.com/watch?v=vhh1ptWd39M">Watch "The Boom Bang — Tobacula" on YouTube</a></noscript></div><p class="vid__cap">Tobacula</p></div>
+      <div><div class="vid__embed"><button type="button" class="embed-load" data-kind="yt" data-id="2q2RIK_yfhY" aria-label="Play video: The Boom Bang — We Skeletons"><img src="posters/2q2RIK_yfhY.webp" width="480" height="270" loading="lazy" decoding="async" alt=""><span class="embed-load__play" aria-hidden="true">Play</span></button><noscript><a class="embed-fallback" href="https://www.youtube-nocookie.com/watch?v=2q2RIK_yfhY">Watch "The Boom Bang — We Skeletons" on YouTube</a></noscript></div><p class="vid__cap">We Skeletons</p></div>
+      <div><div class="vid__embed"><button type="button" class="embed-load" data-kind="yt" data-id="wUGa8IyIZbc" aria-label="Play video: The Boom Bang — Coast of Christmas Trash"><img src="posters/wUGa8IyIZbc.webp" width="480" height="270" loading="lazy" decoding="async" alt=""><span class="embed-load__play" aria-hidden="true">Play</span></button><noscript><a class="embed-fallback" href="https://www.youtube-nocookie.com/watch?v=wUGa8IyIZbc">Watch "The Boom Bang — Coast of Christmas Trash" on YouTube</a></noscript></div><p class="vid__cap">Coast of Christmas Trash</p></div>
     </div>
   </div>
 </section>
@@ -406,11 +424,7 @@
     <h2>Kick Out<br>The <em>Jams</em></h2>
     <p class="listen__sub">Stream the noise · while it lasts</p>
     <div class="player">
-      <iframe title="The Boom Bang on Spotify" style="border-radius:0"
-        src="https://open.spotify.com/embed/artist/33bL0MqydrhKcnGDwzbHFf?utm_source=generator&theme=0"
-        width="100%" height="352" frameborder="0" allowfullscreen
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"></iframe>
+      <button type="button" class="embed-load embed-load--wide" data-kind="sp" data-id="33bL0MqydrhKcnGDwzbHFf" aria-label="Load the Spotify player for The Boom Bang"><span class="embed-load__sp">Load the Spotify player</span><span class="embed-load__note">Loads from open.spotify.com</span></button><noscript><a class="embed-fallback" href="https://open.spotify.com/artist/33bL0MqydrhKcnGDwzbHFf">Listen to The Boom Bang on Spotify</a></noscript>
     </div>
     <div class="streamrow">
       <a class="btn" href="https://theboombang.bandcamp.com" target="_blank" rel="noopener">Bandcamp <span class="arrow">→</span></a>
@@ -474,6 +488,9 @@
 <footer>
   <div class="wrap">
     <p class="rip">Rest In Pizza</p>
+    <nav class="footnav" aria-label="Site information">
+      <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a>
+    </nav>
     <p class="fine">© 2009–2026 The Boom Bang · All Rights Reserved · Powered by <span class="pizza">Pizza</span></p>
   </div>
 </footer>
@@ -492,6 +509,32 @@
   lb.querySelector('.lb__next').addEventListener('click',e=>{e.stopPropagation();show(idx+1);});
   lb.addEventListener('click',e=>{if(e.target===lb)close();});
   document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(idx-1);else if(e.key==='ArrowRight')show(idx+1);});
+})();
+</script>
+
+<script>
+(function(){
+  var SRC={
+    yt:function(id){return "https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1";},
+    sp:function(id){return "https://open.spotify.com/embed/artist/"+id+"?utm_source=generator&theme=0";}
+  };
+  document.addEventListener("click",function(e){
+    var b=e.target.closest(".embed-load");
+    if(!b)return;
+    var f=document.createElement("iframe");
+    f.src=SRC[b.dataset.kind](b.dataset.id);
+    f.title=b.getAttribute("aria-label");
+    f.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+    f.setAttribute("allowfullscreen","");
+    f.setAttribute("frameborder","0");
+    f.style.border="0";
+    f.style.width="100%";
+    if(b.dataset.kind==="sp"){f.style.height="352px";f.style.borderRadius="0";}
+    else{f.style.aspectRatio="16/9";f.style.height="auto";f.style.display="block";}
+    b.replaceWith(f);
+    f.setAttribute("tabindex","-1");
+    f.focus();
+  });
 })();
 </script>
 </body>
